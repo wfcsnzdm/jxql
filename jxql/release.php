@@ -67,9 +67,9 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="panel-606202">
 						<form action="" method="post" >
-						theme<input type="text" name="theme"><br />
-						content<textarea style="height:200px; width:300px;" name="content"></textarea><br />
-						which one <select name="department">
+						主题<input type="text" name="theme"><br />
+						内容<textarea style="height:200px; width:300px;" name="content"></textarea><br />
+						参与部门 <select name="department">
 							<?php
 							$department = $database -> select("management",["department_id"],["administrator" => $_SESSION['uid']]);
 							foreach ($department as  $value) {
