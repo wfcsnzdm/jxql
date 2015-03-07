@@ -1,0 +1,156 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['username'])){
+		echo "<script language='javascript'>alert('请先登录再操作！');window.location.href='./login.html';</script>";
+	}
+	require_once 'medoo.php';
+	$database = new medoo([
+                    'database_type' => 'mysql',
+                    'database_name' => 'jxql',
+                    'server' => 'localhost',
+                    'username' => 'root',
+                    'password' => '',
+                ]);
+	if (!empty($_POST['submit'])) {
+		echo "string";
+		$content = $_POST['content'];
+		$theme = $_POST['theme'];
+		$department = $_POST['department'];
+		$time = time();
+		$database -> insert("release",["content" => $content,"theme" => $theme,"department" => $department,"time" => $time]);
+		echo "release success";
+	}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="http://www.bootcss.com/p/layoutit/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="http://www.bootcss.com/p/layoutit/css/layoutit.css" rel="stylesheet">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="http://www.bootcss.com/p/img/favicon.png">
+	
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/jquery-2.0.0.min.js"></script>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/jquery.htmlClean.js"></script>
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/ckeditor/config.js"></script>
+	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/scripts.js"></script>
+	<script type="text/javascript">
+	function check(form) {
+	  	if(form.user_id.value=='') {
+	  		alert("请输入用户帐号!");
+	  		form.user_id.focus();
+	  		return false;
+	  	}
+	  	if(form.password.value==''){
+                		alert("请输入登录密码!");
+                		form.password.focus();
+                		return false;
+         		}
+          		document.myform.submit();
+          		alert("success set a gly");
+          	}
+	</script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="tabbable" id="tabs-209743">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-606202" data-toggle="tab">第一部分</a>
+					</li>
+					<li>
+						<a href="#panel-893669" data-toggle="tab">第二部分</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-606202">
+						<form action="" method="post" >
+						theme<input type="text" name="theme"><br />
+						content<textarea style="height:200px; width:300px;" name="content"></textarea><br />
+						which one <select name="department">
+							<?php
+							$department = $database -> select("management",["department_id"],["administrator" => $_SESSION['username']]);
+							foreach ($department as  $value) {
+								$names = $database -> select("info",["department_name"],["department_id" =>$value['department_id']]);
+								foreach ($names as $name) {
+									echo "<option value=".$name['department_name'].">".$name['department_name']."</option>";
+								}
+							}
+							?>
+						</select>
+						<input class="btn " type="submit" name="submit" value="设置">
+						</form>
+
+					</div>
+					<div class="tab-pane" id="panel-893669">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>
+										编号
+									</th>
+									<th>
+										主题
+									</th>
+									<th>
+										发表时间
+									</th>
+									<th>
+										参与部门
+									</th>
+									<th>
+										发布人
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+							<?php
+							$show = $database ->select("release",["id","theme","content","department","time","publishers"]);
+							foreach ($show as $value) {
+							?>
+								<tr>
+									<td>
+										<?php echo $value["id"]; ?>
+									</td>
+									<td>
+										<?php echo $value["theme"]; ?>
+									</td>
+									<td>
+										 <?php echo date('Y-m-d', $value["time"]);?>                                                                                                                                     
+									</td>
+									<td>
+										<?php echo $value["department"]; ?>
+									</td>
+									<td>
+										<?php echo $value["publishers"];?>
+									</td>
+								</tr>
+								<?php
+							}
+								?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

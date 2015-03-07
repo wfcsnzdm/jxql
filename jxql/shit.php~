@@ -1,0 +1,14 @@
+<?php
+                  require_once 'medoo.php';
+                  $database = new medoo([
+                    'database_type' => 'mysql',
+                    'database_name' => 'jxql',
+                    'server' => 'localhost',
+                    'username' => 'root',
+                    'password' => '',
+                ]);
+               $database->insert('info', [
+                      'department_id' => 1,
+                      'department_name' => "ssd"
+                  ]);
+?>
