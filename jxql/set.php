@@ -5,18 +5,7 @@
 	if(!isset($_SESSION['uid'])){
 		echo "<script language='javascript'>alert('请先登录再操作！');window.location.href='./login.html';</script>";
 	}
-	if(!empty($_POST['submit'])){
-		$user_id = $_POST['user_id'];
-		$password = $_POST['password'];
-		$username =$_POST['username'];
-		$department_id = $_POST['department'];
-		$select = $database -> select("administrator",["user_id"],["user_id" => $user_id]);
-		if (!$select) {
-			$database -> insert("administrator",["user_id" => $user_id,"password" => $password]);
-		}
-		$database -> insert("management",["department_id" => $department_id,"user_name" => $username,"administrator" => $user_id ]);
-		echo "<script language='javascript'>alert('susscess！');</script>";
-	}
+	
 ?>
 <!doctype html>
 <html lang="en">
@@ -76,7 +65,7 @@
 			<h3 class="text-center">
 				设置管理员
 			</h3>
-			<form class="form-horizontal offset2" action="" name="myform" method="post" onsubmit="return check(this)" >
+			<form class="form-horizontal offset2" action="deal.php" name="myform" method="post" onsubmit="return check(this)" >
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">用户id</label>
 					<div class="controls">
@@ -110,7 +99,7 @@
 				</div>
 				<div class="control-group offset1">
 					<div class="controls">
-						<input class="btn " type="submit" name="submit" value="设置">
+						<input class="btn " type="submit" name="SetSubmit" value="设置">
 					</div>
 				</div>
 

@@ -85,7 +85,7 @@
 						</td>
 						<td>
 							<a href="./xs.php?id=<?php echo $value["id"]; ?>"><?php echo $value["id"]; ?>查看</a>
-							<a href="#">管理</a>
+							<a href="./manage.php?id=<?php echo $value["id"]; ?>">管理</a>
 							<a href="#">删除</a>
 						</td>
 					</tr>
