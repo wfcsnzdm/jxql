@@ -29,7 +29,7 @@
 	 	
 	 	echo "<script type='text/javascript' >window.location.href='./release.php';</script>";
 	 }else{
-	 	echo "<script type='text/javascript'>alert('please input right');window.location.href='./login.html'; </script>";
+	 	echo "<script type='text/javascript'>alert('密码与账号不匹配');window.location.href='./login.html'; </script>";
 
 	 }
 	 }

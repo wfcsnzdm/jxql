@@ -1,0 +1,290 @@
+#nav{
+	width: 100%;
+	height: 70px;
+	background: #505050;
+	z-index: 500;
+	position: static;
+}
+#nav_all{
+	width: 1300px;
+	height: 70px;
+	margin: 0 auto;
+}
+#nav_tab{
+	position: relative;
+	display: block;
+	width: 840px;
+	height: 70px;
+	margin: 0 auto;
+	float: left;
+}
+.tabs{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	margin: 15px 10px;
+	float: left;
+	text-align: center;
+	border-radius:50px;
+	transition:0.1s ease-out;
+	-ms-transition:0.1s ease-out;
+	-moz-transition:0.1s ease-out;
+	-webkit-transition:0.1s ease-out;
+	-o-transition:0.1s ease-out;
+}
+#nav_tab li:hover{
+	transform:scale(1.1,1.1);
+	-ms-transform:scale(1.1,1.1);
+	-moz-transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);
+	-o-transform:scale(1.1,1.1);
+	background: #7ecef4;
+}
+#nav_tab li a{
+	color: #fff;
+	font-size: 20px;
+	font-weight: lighter;
+	font-family:微软雅黑;
+}
+#p_login{
+	margin: 25px 0 0 150px;
+	float: left;
+}
+.dl_login{
+	color: #fff;
+	font-weight: lighter;
+	font-family:微软雅黑;
+	transition:0.2s ease;
+	-ms-transition:0.2s ease;
+	-moz-transition:0.2s ease;
+	-webkit-transition:0.2s ease;
+	-o-transition:0.2s ease;
+}
+.dl_login:hover{
+	color: #9ca9be;
+	transform:scale(1.1,1.1);
+	-ms-transform:scale(1.1,1.1);
+	-moz-transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);
+	-o-transform:scale(1.1,1.1);
+}
+
+
+#logo{
+	position: relative;
+	display: block;
+	width: 249px;
+	height: 206px;
+	margin: 50px auto 20px;
+}
+#main{
+	background: url(../images/bg.png);
+	margin: 0 auto;
+	width: 900px;
+	height: 900px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.15), 0px 20px 80px 0px rgba(0, 0, 0, 0.2);
+}
+#main1{
+	/*background: url(../images/bg.png);*/
+	margin: 0 auto;
+	width: 900px;
+	height: 900px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	/*box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.15), 0px 20px 80px 0px rgba(0, 0, 0, 0.2);*/
+}
+.r_span{
+	color: #000;
+	font-size: 25px;
+	font-weight: lighter;
+	font-family:微软雅黑;	
+	position: relative;
+	display: block;	
+	margin-left: 10px;
+}
+.r_span.r_span_1{
+	text-align: center;
+	padding-top: 50px;
+}
+.r_span.r_span_2{
+	position: relative;
+	display: block;
+}
+.r_theme{
+	padding: 40px 0px 0px 40px;
+	width: 300px;
+	height: 50px;
+}
+.r_content{
+	padding: 40px 0px 0px 40px;
+	width: 750px;
+	height: 240px;
+}
+.r_which_one{
+	padding: 40px 0px 0px 40px;
+	width: 500px;
+	height: 60px;
+}
+
+
+#txt{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: lighter;
+	font-family:微软雅黑;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.6);
+	border: 2px solid #DBBFC3;
+	border-radius: 10px;
+	outline: 0px none;
+}
+#txt:focus{
+	border: 2px solid #9ca9be;
+}
+
+
+#c_txt{
+	font-size: 20px;
+	font-weight: lighter;
+	font-family:微软雅黑;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+
+#r_submit{
+	margin: 100px auto;
+	width: 260px;
+	height: 70px;
+}
+#submit{
+	position: relative;
+	background-color: #A55F67;
+	border: 0px none;
+	border-radius: 8px;
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	height: 70px;
+	font-size: 32px;
+	line-height: 70px;
+	outline: 0px none;
+	padding: 0px 90px;
+	margin-bottom: 40px !important;
+	box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.3);
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+	text-align: center;
+	margin: 0 auto;
+}
+#submit:hover{
+	opacity:0.80;
+	filter: alpha(opacity=80);
+}
+#radio{
+	float: right;
+	margin-right: 20px;
+}
+.r_login{
+	padding: 40px 0px 0px 150px;
+	width: 500px;
+	height: 50px;
+}
+.info{
+	/*margin-left: 100px;*/
+	font-size: 21px;
+	font-family: "微软雅黑"；
+}
+#checkbox{
+	margin-left: 20px;
+	font-size: 20px;
+	font-family: "微软雅黑"；
+}
+.sp{
+	font-family: "微软雅黑";
+	font-size: 20px;
+	line-height: 25px;
+	}
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc; 
+    -moz-box-shadow: 0 1px 1px #ccc; 
+    box-shadow: 0 1px 1px #ccc;         
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+    
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+
+.bordered th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
